@@ -34,6 +34,7 @@ vim.g.loaded_ruby_provider = 0
 
 vim.diagnostic.config({
   severity_sort = true,
+  underline = true,
   float = {
     focusable = true,
     style = "minimal",
