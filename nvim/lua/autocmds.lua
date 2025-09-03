@@ -57,23 +57,40 @@ autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
-autocmd("LspAttach", {
+vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
-    vim.keymap.del("n", "K", { buffer = args.buf })
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    if client:supports_method("textDocument/implementation") then
-      local bufopts = { noremap = true, silent = true, buffer = args.buf }
-      vim.keymap.del("n", "K")
-      map("n", "<leader>d", vim.lsp.buf.definition, bufopts)
-      map("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
-      map("n", "<leader>h", vim.lsp.buf.hover, bufopts)
-      map("n", "<leader>r", vim.lsp.buf.references, bufopts)
-      map("n", "<leader>i", vim.lsp.buf.implementation, bufopts)
-      map("n", "<leader>e", vim.diagnostic.open_float, opts)
-      map("n", "<leader>q", vim.diagnostic.setloclist, opts)
-      map("n", "<leader>rn", vim.lsp.buf.rename)
-      map("n", "<leader>ca", vim.lsp.buf.code_action)
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    local bufnr = args.buf
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+    map("n", "<leader>d", vim.lsp.buf.definition, bufopts)
+    map("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+    map("n", "<leader>h", vim.lsp.buf.hover, bufopts)
+    map("n", "<leader>r", vim.lsp.buf.references, bufopts)
+    map("n", "<leader>i", vim.lsp.buf.implementation, bufopts)
+    map("n", "<leader>e", vim.diagnostic.open_float, bufopts)
+    map("n", "<leader>q", vim.diagnostic.setloclist, bufopts)
+    map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end
+
+    if client.server_capabilities.codeLensProvider then
+      map("n", "<leader>cl", vim.lsp.codelens.run, { buffer = bufnr, desc = "Run CodeLens" })
+      map(
+        "n",
+        "<leader>cr",
+        vim.lsp.codelens.refresh,
+        { buffer = bufnr, desc = "Refresh CodeLens" }
+      )
+
+      local group = vim.api.nvim_create_augroup("LspCodeLens" .. bufnr, { clear = true })
+      vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+        group = group,
+        buffer = bufnr,
+        callback = function() vim.lsp.codelens.refresh({ bufnr = bufnr }) end,
+      })
     end
   end,
 })
