@@ -26,6 +26,7 @@ return {
       -- Go
       "gopls",
       "goimports",
+      "golangci-lint",
 
       -- Others
       "commitlint",

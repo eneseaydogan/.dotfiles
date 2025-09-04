@@ -1,8 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufRead", "BufNew" },
-  config = {
-    -- clang, lua, gopls
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
     vim.lsp.config("lua_ls", {
       on_init = function(client)
         if client.workspace_folders then
@@ -34,7 +33,7 @@ return {
       settings = {
         Lua = {},
       },
-    }),
+    })
     vim.lsp.config("clangd", {
       cmd = {
         "clangd",
@@ -45,10 +44,10 @@ return {
         "--function-arg-placeholders",
         "--fallback-style=llvm",
       },
-    }),
-  },
+    })
 
-  vim.lsp.enable("lua_ls"),
-  vim.lsp.enable("clangd"),
-  vim.lsp.enable("gopls"),
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("clangd")
+    vim.lsp.enable("gopls")
+  end,
 }
