@@ -44,7 +44,7 @@ if status is-interactive
     zoxide init fish | source
     if command -q keychain
         set -lx SHELL (which fish)
-        keychain --eval git-gh -q | source
+        keychain --eval git-gh 18C111AED1F68CBE -q | source
     end
 
     function ze

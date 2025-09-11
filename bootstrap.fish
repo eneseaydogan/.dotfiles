@@ -37,6 +37,6 @@ end
 
 echo "[*] Linking configs with stow..."
 cd (dirname (status -f))  # go to .dotfiles repo root
-stow .
+stow --adopt .
 
 echo "[*] Done!"
