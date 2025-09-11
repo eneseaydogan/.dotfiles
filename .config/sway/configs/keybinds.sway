@@ -1,0 +1,96 @@
+### ==================== ###
+###       APPS           ###
+### ==================== ###
+
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $browser; workspace number 3
+bindsym $mod+Shift+z exec zathura; workspace number 10
+
+# Menu
+bindsym $mod+o exec $menu
+
+### ==================== ###
+###   WINDOW MANAGEMENT  ###
+### ==================== ###
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Reload/Exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+# Floating modifier
+floating_modifier $mod normal
+
+# Focus parent / toggle fullscreen / floating / focus mode
+bindsym $mod+a focus parent
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Borders and bars
+bindsym $mod+b border toggle normal pixel 1
+bindsym $mod+Shift+b bar mode toggle
+
+### ==================== ###
+###     FOCUS & MOVE     ###
+### ==================== ###
+
+# Move focus between windows
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows between positions
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+### ==================== ###
+###       WORKSPACES     ###
+### ==================== ###
+
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+### ==================== ###
+###     AUDIO / MEDIA    ###
+### ==================== ###
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && ~/.config/sway/scripts/audnot.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && ~/.config/sway/scripts/audnot.sh
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && ~/.config/sway/scripts/audnot.sh
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Media playback
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Toggle output (example)
+bindsym $mod+Shift+m output "eDP-1" toggle

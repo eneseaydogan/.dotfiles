@@ -1,0 +1,17 @@
+input 1:1:AT_Translated_Set_2_keyboard {
+        xkb_layout "us"
+        xkb_options "caps:escape"
+}
+
+input 17485:13622:eeay0_Dactyl_Minidox {
+        xkb_layout "us"
+	# xkb_variant dvp
+
+}
+
+input 1267:14:Elan_Touchpad {
+        tap enabled
+        dwt enabled
+        middle_emulation enabled
+        drag enabled
+}

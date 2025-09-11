@@ -46,8 +46,14 @@ return {
       },
     })
 
+    vim.lsp.config("bashls", {
+      filetypes = { "bash", "sh", "zsh" },
+    })
+
     vim.lsp.enable("lua_ls")
     vim.lsp.enable("clangd")
     vim.lsp.enable("gopls")
+    vim.lsp.enable("bashls")
+    vim.lsp.enable("fish_lsp")
   end,
 }

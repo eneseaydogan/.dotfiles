@@ -7,6 +7,11 @@ return {
     require("catppuccin").setup({
       compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
       flavour = "mocha",
+      dim_inactive = {
+        enabled = true, -- dims the background color of inactive window
+        shade = "dark",
+        percentage = 0.05, -- percentage of the shade to apply to the inactive window
+      },
       styles = {
         comments = { "italic" }, -- Keep italic for visual distinction
         conditionals = { "bold" }, -- Make if/else/switch stand out

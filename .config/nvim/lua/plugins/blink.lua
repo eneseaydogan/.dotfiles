@@ -66,10 +66,9 @@ return {
       },
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer" },
+      default = { "lsp", "snippets", "path", "buffer" },
       per_filetype = {
-        markdown = { "lsp", "snippets", "dictionary", "path", "buffer" },
-        copilot_chat = { "lsp", "snippets", "dictionary", "path", "buffer" },
+        markdown = { inherit_defaults = true, "dictionary" },
       },
       providers = {
         dictionary = {

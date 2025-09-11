@@ -1,0 +1,8 @@
+bar {
+    status_command while date +'%d-%m-%Y %H-%M'; do min 5; done
+    mode hide
+    position top
+}
+
+default_border pixel 1
+smart_borders on

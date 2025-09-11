@@ -2,16 +2,6 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 map("n", "<C-b>", "<C-v>", { noremap = true })
--- better up/down
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map(
-  { "n", "x" },
-  "<Down>",
-  "v:count == 0 ? 'gj' : 'j'",
-  { desc = "Down", expr = true, silent = true }
-)
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- Scroll Half and center
 map("n", "<S-down>", "<C-d>zz")
@@ -76,8 +66,8 @@ map("v", ">", ">gv")
 map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', opts)
 
 -- Windows
-map("n", "<C-s>", "<C-w>s", { desc = "Split window below" })
-map("n", "<C-v>", "<C-w>v", { desc = "Split window right" })
+map("n", "<C-m>", "<C-w>s", { desc = "Split window below" })
+map("n", "<C-n>", "<C-w>v", { desc = "Split window right" })
 map("n", "<C-c>", "<C-w>c", { desc = "Close current window" })
 map("n", "<C-f>", "<C-w><C-w>")
 
@@ -92,3 +82,8 @@ map("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true, silent = true })
 
 -- Terminal
 map("t", "<Esc>", [[<C-\><C-n>]]) -- Escape to normal mode in terminal
+
+map("v", "<leader>rv", '"hy:%s/\\V<C-r>h/<C-r>h/gc<left><left><left>')
+map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+map("n", "<leader>w", ":w<cr>", opts)

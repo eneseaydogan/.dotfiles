@@ -68,6 +68,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "<leader>h", vim.lsp.buf.hover, bufopts)
     map("n", "<leader>r", vim.lsp.buf.references, bufopts)
     map("n", "<leader>i", vim.lsp.buf.implementation, bufopts)
+    map("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
     map("n", "<leader>e", vim.diagnostic.open_float, bufopts)
     map("n", "<leader>q", vim.diagnostic.setloclist, bufopts)
     map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
@@ -103,4 +104,15 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.shiftwidth = 4
     vim.opt.softtabstop = 0
   end,
+})
+
+vim.api.nvim_create_autocmd("QuickFixCmdPost", {
+  callback = function() vim.cmd([[Trouble qflist open]]) end,
+})
+
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*.sway",
+    callback = function()
+        vim.bo.filetype = "swayconfig"
+    end,
 })

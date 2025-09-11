@@ -1,0 +1,11 @@
+xwayland disable
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id autotiling -l 2 -sw 95
+exec --no-startup-id mako
+
+seat seat0 xcursor_theme Adwaita 32
+
+exec swayidle -w \
+     timeout 180 'swaylock -f -c 000000; swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+     before-sleep 'swaylock -f -c 000000'

@@ -1,0 +1,60 @@
+[colors.primary]
+background = "#121212"
+foreground = "#e8e8e8"
+
+[colors.selection]
+text = "#e8e8e8"
+background = "#404040"
+
+[colors.normal]
+black   = "#121212"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#e8e8e8"
+
+[colors.bright]
+black   = "#6c6c6c"
+red     = "#ff899d"
+green   = "#9fe044"
+yellow  = "#faba4a"
+blue    = "#8db0ff"
+magenta = "#c7a9ff"
+cyan    = "#a4daff"
+white   = "#e8e8e8"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ff9e64"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#db4b4b"
+
+# Keep all other Alacritty-specific colors as they were
+[colors.vi_mode_cursor]
+text = "#121212"
+cursor = "#b4befe"
+
+[colors.search.matches]
+foreground = "#121212"
+background = "#a8a8a8"
+
+[colors.search.focused_match]
+foreground = "#121212"
+background = "#a6e3a1"
+
+[colors.footer_bar]
+foreground = "#121212"
+background = "#a8a8a8"
+
+[colors.hints.start]
+foreground = "#121212"
+background = "#f9e2af"
+
+[colors.hints.end]
+foreground = "#121212"
+background = "#a8a8a8"

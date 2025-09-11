@@ -3,11 +3,13 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-treesitter-context",
+    "HiPhish/rainbow-delimiters.nvim",
   },
   verion = false,
   branch = "master",
-  cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-  event = { "VeryLazy" },
+  lazy = false,
+  -- cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+  -- event = { "VeryLazy" },
   keys = {
     { "<c-space>", desc = "Increment Selection" },
     { "<bs>", desc = "Decrement Selection", mode = "x" },

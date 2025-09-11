@@ -1,0 +1,71 @@
+keybinds clear-defaults=true {
+    normal {
+        bind "Ctrl Shift n" { NewPane "Right"; }
+        bind "Ctrl Shift m" { NewPane "Down"; }
+        bind "Ctrl Shift w" { CloseFocus; }
+        // Tabs
+        bind "Ctrl t" { NewTab; }
+        bind "Alt Shift c" { CloseTab; }
+        bind "Ctrl Shift left" { GoToNextTab; }
+        bind "Ctrl Shift right" { GoToPreviousTab; }
+        bind "Ctrl Tab" { GoToNextTab; }
+        bind "Ctrl Shift Tab" { GoToPreviousTab; }
+        bind "Alt Shift ," {MoveTab "Left";}
+        bind "Alt Shift ." {MoveTab "Left";}
+        bind "Ctrl l" { Clear; }
+        bind "Ctrl q" { Detach; }
+        bind "Ctrl Shift q" { Quit; }
+        bind "Ctrl Shift s" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
+    }
+    shared_except "locked" {
+        bind "Ctrl Left" { MessagePlugin "vzn" { name "move_focus"; payload "left"; move_mod "ctrl"; use_arrow_keys "true"; }; }
+        bind "Ctrl Down" { MessagePlugin "vzn" { name "move_focus"; payload "down";  move_mod "ctrl"; use_arrow_keys "true"; }; }
+        bind "Ctrl Up" { MessagePlugin "vzn" { name "move_focus"; payload "up";  move_mod "ctrl"; use_arrow_keys "true"; }; }
+        bind "Ctrl Right" { MessagePlugin "vzn" { name "move_focus"; payload "right";  move_mod "ctrl"; use_arrow_keys "true"; }; }
+        bind "Alt Left" { MessagePlugin "vzn" { name "resize"; payload "left";  move_mod "alt"; use_arrow_keys "true"; }; }
+        bind "Alt Down" { MessagePlugin "vzn" { name "resize"; payload "down";  move_mod "alt"; use_arrow_keys "true"; }; }
+        bind "Alt Up" { MessagePlugin "vzn" { name "resize"; payload "up";  move_mod "alt"; use_arrow_keys "true"; }; }
+        bind "Alt Right" { MessagePlugin "vzn" { name "resize"; payload "right";  move_mod "alt"; use_arrow_keys "true"; }; }
+    }
+}
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    configuration location="zellij:configuration"
+    plugin-manager location="zellij:plugin-manager"
+    about location="zellij:about"
+    vzn location="file:$HOME/.config/zellij/plugins/vim-zellij-navigator.wasm"
+}
+// Plugins to load in the background when a new session starts
+load_plugins {
+}
+simplified_ui true
+pane_frames false
+auto_layout true
+session_serialization true
+scrollback_lines_to_serialize 10000
+show_startup_tips false
+theme "catppuccin-mocha"
+default_layout "compact"
+copy_command "wl-copy"
+scrollback_editor "nvim"
+default_shell "fish"
+// layout_dir "/path/to/my/layout_dir"
+web_client {
+    font "monospace"
+}

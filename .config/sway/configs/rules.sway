@@ -1,0 +1,7 @@
+# apps
+assign [app_id="alacritty-edit"] 1
+assign [app_id="brave"] 3
+assign [app_id="zathura"] 10
+
+# windows
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable

@@ -1,11 +1,24 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  -- event = { "VeryLazy" },
   cmd = { "FzfLua" },
   keys = {
     {
       "<A-o>",
       function() require("fzf-lua").files({ hidden = false }) end,
+      mode = "n",
+      desc = "Fzf Files",
+    },
+    {
+      "<A-f>",
+      function() require("fzf-lua").files({ cwd = "~" }) end,
+      mode = "n",
+      desc = "Fzf Files",
+    },
+    {
+      "<A-S-o>",
+      function() require("fzf-lua").files({ hidden = true }) end,
       mode = "n",
       desc = "Fzf Files",
     },

@@ -1,0 +1,12 @@
+set $mod Mod4
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term alacritty
+
+set $browser brave
+
+set $menu bemenu-run -i --list 15 --fn "JetBrainsMono Nerd Font 20" --center --width-factor 0.2 --line-height 38 --border 3 --bdr "#1b1a19" --prompt "" --no-overlap --fixed-height --nb "#151514" --nf "#f0f0f0" --hb "#2d2b29" --hf "#9ece6a" --cb "#121110" --cf "#f0f0f0" --tb "#151514" --tf "#9ece6a" --sb "#121110" --sf "#9ece6a" --scb "#0f0f0e" --scf "#9a9a9a"
