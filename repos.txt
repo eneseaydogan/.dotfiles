@@ -1,4 +1,2 @@
 https://github.com/neovim/neovim
-https://github.com/zellij-org/zellij
-https://github.com/alacritty/alacritty
 https://github.com/yashgorana/chrome-debloat

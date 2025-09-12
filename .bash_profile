@@ -1,6 +1,6 @@
 [ -f ~/.bashrc ] && source ~/.bashrc
 
-if [ -f ~/.config/sway/env ] && [ -t 1 ]; then
-    source ~/.config/sway/env
+if [ "$(tty)" = "/dev/tty1" ]; then
+    [ -f ~/.config/sway/env ] && source ~/.config/sway/env
     exec sway
 fi

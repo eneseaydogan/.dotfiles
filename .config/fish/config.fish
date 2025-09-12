@@ -42,42 +42,10 @@ if status is-interactive
 
     fzf --fish | source
     zoxide init fish | source
-    if command -q keychain
-        set -lx SHELL (which fish)
-        keychain --eval git-gh 18C111AED1F68CBE -q | source
-    end
-
-    function ze
-        set personal_dirs (fd --type d --max-depth 2 --min-depth 2 . $HOME/personal | \
-                   string replace "$HOME/personal/" "" | \
-                   string replace -r '/$' '')
-
-        set dotfiles_dirs
-        if test -d $HOME/.dotfiles
-            set dotfiles_dirs ".dotfiles"
-        end
-
-        set dir (printf '%s\n' $personal_dirs $dotfiles_dirs | \
-         fzf --prompt "Select directory: ")
-
-        if string match -q ".dotfiles" $dir
-            set full_path $HOME/.dotfiles
-            set session_name dotfiles
-        else
-            set full_path $HOME/personal/$dir
-            set session_name (string replace "/" "-" $dir)
-        end
-
-        if not zellij list-sessions | string match -q "*$session_name*"
-            echo "Creating session: $session_name"
-            z $full_path
-            zellij --session $session_name
-        else
-            echo "Attaching to session: $session_name"
-            z $full_path
-            zellij attach $session_name
-        end
-    end
+    # if command -q keychain
+    #     set -lx SHELL (which fish)
+    #     keychain --eval git-gh 30F8846CFEC0BA35 -q | source
+    # end
 
     bind \cp history-search-backward
     bind \cn history-search-forward

@@ -1,3 +1,14 @@
-bootstrap.fish
+# Ignore VCS
+.git
+.gitignore
+
+# Ignore Stow config itself
+.stow-local-ignore
+
+# Ignore repo-specific manifests
 packages.txt
 repos.txt
+
+# Ignore non-dotfile scripts at repo root
+bootstrap
+bootstrap.fish

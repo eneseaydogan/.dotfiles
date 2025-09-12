@@ -1,5 +1,7 @@
 xwayland disable
 
+exec --no-startup-id pgrep -x xdg-desktop-portal >/dev/null || /usr/lib/xdg-desktop-portal &
+exec --no-startup-id pgrep -x xdg-desktop-portal-wlr >/dev/null || /usr/lib/xdg-desktop-portal-gtk &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id autotiling -l 2 -sw 95
 exec --no-startup-id mako

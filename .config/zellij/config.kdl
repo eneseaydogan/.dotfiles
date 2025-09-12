@@ -13,8 +13,8 @@ keybinds clear-defaults=true {
         bind "Alt Shift ," {MoveTab "Left";}
         bind "Alt Shift ." {MoveTab "Left";}
         bind "Ctrl l" { Clear; }
-        bind "Ctrl q" { Detach; }
-        bind "Ctrl Shift q" { Quit; }
+        // bind "Ctrl q" { Detach; }
+        bind "Ctrl q" { Quit; }
         bind "Ctrl Shift s" {
             LaunchOrFocusPlugin "session-manager" {
                 floating true
@@ -40,9 +40,6 @@ plugins {
     strider location="zellij:strider"
     compact-bar location="zellij:compact-bar"
     session-manager location="zellij:session-manager"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
     filepicker location="zellij:strider" {
         cwd "/"
     }
@@ -51,13 +48,11 @@ plugins {
     about location="zellij:about"
     vzn location="file:$HOME/.config/zellij/plugins/vim-zellij-navigator.wasm"
 }
-// Plugins to load in the background when a new session starts
-load_plugins {
-}
 simplified_ui true
 pane_frames false
 auto_layout true
 session_serialization true
+pane_viewport_serialization true
 scrollback_lines_to_serialize 10000
 show_startup_tips false
 theme "catppuccin-mocha"

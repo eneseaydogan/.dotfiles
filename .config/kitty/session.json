@@ -1,0 +1,167 @@
+[
+  {
+    "background_opacity": 1.0,
+    "id": 1,
+    "is_active": true,
+    "is_focused": true,
+    "last_focused": true,
+    "platform_window_id": null,
+    "tabs": [
+      {
+        "active_window_history": [
+          1,
+          5,
+          6
+        ],
+        "enabled_layouts": [
+          "tall"
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "windows": [
+              1
+            ]
+          },
+          {
+            "id": 5,
+            "windows": [
+              5
+            ]
+          },
+          {
+            "id": 6,
+            "windows": [
+              6
+            ]
+          }
+        ],
+        "id": 1,
+        "is_active": true,
+        "is_focused": true,
+        "layout": "tall",
+        "layout_opts": {
+          "bias": 50,
+          "full_size": 1,
+          "mirrored": false
+        },
+        "layout_state": {
+          "biased_map": {},
+          "main_bias": [
+            0.5,
+            0.5
+          ],
+          "num_full_size_windows": 1
+        },
+        "title": "~/.dotfiles/.config/kitty: kitty @ ls > session.json - kitty",
+        "windows": [
+          {
+            "at_prompt": false,
+            "cmdline": [
+              "fish"
+            ],
+            "columns": 59,
+            "created_at": 1757684727274341487,
+            "cwd": "/home/emreaydogan/.dotfiles/.config/kitty",
+            "env": {
+              "KITTY_WINDOW_ID": "1",
+              "PWD": "/home/emreaydogan"
+            },
+            "foreground_processes": [
+              {
+                "cmdline": [
+                  "kitten",
+                  "@",
+                  "ls"
+                ],
+                "cwd": "/home/emreaydogan/.dotfiles/.config/kitty",
+                "pid": 311368
+              }
+            ],
+            "id": 1,
+            "in_alternate_screen": false,
+            "is_active": true,
+            "is_focused": true,
+            "is_self": true,
+            "last_cmd_exit_status": 0,
+            "last_reported_cmdline": "kitty @ ls > session.json",
+            "lines": 59,
+            "pid": 305086,
+            "title": "~/.dotfiles/.config/kitty: kitty @ ls > session.json - kitty",
+            "user_vars": {}
+          },
+          {
+            "at_prompt": true,
+            "cmdline": [
+              "fish"
+            ],
+            "columns": 60,
+            "created_at": 1757685269336120865,
+            "cwd": "/home/emreaydogan/.dotfiles/.config/kitty",
+            "env": {
+              "KITTY_WINDOW_ID": "5",
+              "PWD": "/home/emreaydogan/.dotfiles/.config/kitty"
+            },
+            "foreground_processes": [
+              {
+                "cmdline": [
+                  "fish"
+                ],
+                "cwd": "/home/emreaydogan/.dotfiles/.config/kitty",
+                "pid": 311204
+              }
+            ],
+            "id": 5,
+            "in_alternate_screen": false,
+            "is_active": false,
+            "is_focused": false,
+            "is_self": false,
+            "last_cmd_exit_status": 0,
+            "last_reported_cmdline": "",
+            "lines": 29,
+            "pid": 311204,
+            "title": "~/.dotfiles/.config/kitty - fish",
+            "user_vars": {}
+          },
+          {
+            "at_prompt": false,
+            "cmdline": [
+              "fish"
+            ],
+            "columns": 60,
+            "created_at": 1757685270169267974,
+            "cwd": "/home/emreaydogan/.dotfiles/.config/kitty",
+            "env": {
+              "KITTY_WINDOW_ID": "6",
+              "PWD": "/home/emreaydogan/.dotfiles/.config/kitty"
+            },
+            "foreground_processes": [
+              {
+                "cmdline": [
+                  "nvim"
+                ],
+                "cwd": "/home/emreaydogan/.dotfiles/.config/kitty",
+                "pid": 311269
+              }
+            ],
+            "id": 6,
+            "in_alternate_screen": true,
+            "is_active": false,
+            "is_focused": false,
+            "is_self": false,
+            "last_cmd_exit_status": 0,
+            "last_reported_cmdline": "nvim",
+            "lines": 30,
+            "pid": 311235,
+            "title": "~/.dotfiles/.config/kitty: nvim - nvim",
+            "user_vars": {
+              "IS_NVIM": "1 "
+            }
+          }
+        ]
+      }
+    ],
+    "wm_class": "kitty",
+    "wm_name": "kitty"
+  }
+]

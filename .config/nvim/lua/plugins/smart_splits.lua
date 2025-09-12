@@ -49,7 +49,6 @@ return {
     config = function()
         require("smart-splits").setup({
             multiplexer_integration = true,
-            zellij_move_focus_or_tab = true,
         })
     end,
 }

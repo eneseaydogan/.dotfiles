@@ -16,7 +16,7 @@ fish
 bemenu-wayland
 github-cli
 bat
-delta
+git-delta
 fzf
 fd
 ripgrep
@@ -31,7 +31,6 @@ rustup
 eza
 man-db
 keychain
-zellij
 words
 wl-clipboard
 ttf-joypixels
@@ -44,8 +43,16 @@ refactor
 rsync
 make
 libgnome-keyring
+libsecret
 polkit
 polkit-gnome
 xdg-desktop-portal
-xdg-desktop-portal-wlr
+xdg-desktop-portal-gtk
 ncspot
+zoxide
+kitty
+tlp
+mako
+lazygit
+sd
+nwg-look

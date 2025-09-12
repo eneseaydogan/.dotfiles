@@ -1,2 +1,2 @@
-include /home/enes-e-aydogan/.config/sway/configs/*
+include $HOME/.config/sway/configs/*
 include /etc/sway/config.d/*

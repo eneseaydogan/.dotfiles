@@ -5,9 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
 export GPG_TTY=$(tty)
 export PATH="$HOME/.local/bin:$PATH"
 export FZF_DEFAULT_OPTS=" \
@@ -17,4 +15,7 @@ export FZF_DEFAULT_OPTS=" \
     --color=selected-bg:#45475A \
     --color=border:#6C7086,label:#CDD6F4 \
     --highlight-line --info=inline-right --ansi --layout=reverse"
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '

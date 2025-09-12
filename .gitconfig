@@ -1,6 +1,6 @@
 [include]
     path = ~/.config/delta/catppuccin.gitconfig
-    path = ~/.gitconfig.user
+    path = ~/.gituser
 [core]
     editor = nvim
     autocrlf = input
